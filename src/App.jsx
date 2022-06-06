@@ -46,7 +46,7 @@ return (
 
 <ItemListContainer
 
-title="hola a todos"
+title="hola a todos."
 nombre="carlos"
 
 
