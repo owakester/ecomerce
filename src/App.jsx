@@ -1,9 +1,9 @@
 import { useState,useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
-import Header from './components/header/Header'
 import CartWidget from './components/CartWidget'
 import ItemListContainer from './components/ItemListContainer'
+import ItemCount from './components/ItemCount'
 
 function App() {
   /* const [count,modificarCount] =useState(1)
@@ -31,14 +31,31 @@ useEffect(()=>{
 
 },[])
  */
-  return (
+  
+
+return (
+
     <div className="App">
-      <Header/>
+      
+
     {/*  <p>la cantidad es {count}</p>
      <button onClick={agregar}>boton</button> */}
-  
+ 
           <Navbar/>  
-          <ItemListContainer/>
+            
+
+<ItemListContainer
+
+title="hola a todos"
+nombre="carlos"
+
+
+></ItemListContainer>
+
+ 
+<ItemCount/>  
+
+
     </div> 
   )
 } 

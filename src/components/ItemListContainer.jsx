@@ -1,11 +1,14 @@
 
-
-function ItemListContainer () {
+function ItemListContainer(props) {
   
-    return (
-      <div>Texto para Catalogo</div>
-    )
-  }
+  
+  return (
+    <div>
+     
+                                
+    </div>
+      
+  );
+}
 
-
-export default ItemListContainer
+export default ItemListContainer;

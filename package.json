@@ -1,14 +1,18 @@
 {
   "name": "ecomerce",
   "private": true,
+  "homepage": "http://owakester.github.io/ecomerce",
   "version": "0.0.0",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "gh-pages": "^4.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
