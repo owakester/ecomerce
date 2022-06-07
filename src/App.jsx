@@ -53,7 +53,7 @@ nombre="carlos"
 ></ItemListContainer>
 
  
-<ItemCount/>  
+<ItemCount producto="Tablet PC" stock="10" initial="1" />  
 
 
     </div> 

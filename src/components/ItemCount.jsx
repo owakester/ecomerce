@@ -1,79 +1,56 @@
-import { useState, useEffect } from "react";
-import imagen from "../tablet.png";
-let state = false;
-let msnWarning = "";
-ItemCount.defaultProps = {
-  stock: 5,
-  initial: 1,
-  producto: "Lampara Led",
-};
-function ItemCount(props) {
-  const [contador, setContador] = useState(0);
+import React from 'react';
+import { useState } from 'react';
+import Logo from "../tablet.png";
 
-  useEffect(() => {
-    if (contador >= props.stock) {
-      state = true;
-      msnWarning = "No tenemos mas stock";
-    }
-  });
+const ItemCount = ({ initial, stock, onAdd,producto }) => {
+ 
+  const [contador, setContador] = useState(initial);
 
-  const aumentarContador = () => {
-    setContador(contador + 1);
+  const addProduct = (num) => {
+    setContador(parseInt (contador) + num);
+    
   };
 
-  const disminuirContador = () => {
-    setContador(contador - 1);
+  onAdd = (contador) => {
+    alert(`Has agregado ${contador} ${producto}`);
   };
+
 
   return (
-    <div className="my-8 container">
-      <div className="bg-slate-200 rounded-md opacity-90  shadow-xl h-auto w-96  mx-auto">
-        <img
-          className="rounded m-1 object-contain h-48 w-96 ..."
-          src={imagen}
-        />
-        <h3 className="text-cyan-500 text-xl">{props.producto}</h3>
-
-        <br />
-
-        <div class="flex flex-row  place-items-center  ">
-          <div class="basis-2/5">
-            <button
-              className="bg-green-300 rounded shadow-sm mx-2 p-2"
-              onClick={disminuirContador}
-            >
-              -
-            </button>
-          </div>
-          <div class="basis-1/5">{contador}</div>
-          <div class="basis-2/5">
-            {" "}
-            <button
-              disabled={state}
-              className="bg-green-300 rounded shadow-sm mx-2 p-2"
-              onClick={aumentarContador}
-            >
-              +
-            </button>
-          </div>
-        </div>
-
-        <h3 className="text-cyan-500">
-          {" "}
-          El stock son:{" "}
-          <span className="text-orange-400 text-lg font-bold">
-            {props.stock}
-          </span>{" "}
-        </h3>
-        <div
-          className=" text-sm text-red-700 bg-red-100 rounded dark:bg-red-200 dark:text-red-800"
-          role="alert"
+    <div className="container ">
+      <div className='mt-12 bg-slate-100 h-auto w-48  mx-auto place-items-center shadow-xl'>
+        <p>{producto}</p>
+       <img className='mx-auto ' src={Logo}  alt=""height={180} width={180} />
+      <div className="flex flex-row lex items-center justify-center     ">
+      
+      
+        <button
+          className="basis-1/4 bg-green-300 rounded shadow-sm mx-2  py-2"
+          onClick={() => addProduct(-1)}
+          disabled={contador === parseInt(initial) ? true : null}
         >
-          <span className="font-medium">{msnWarning}</span>
-        </div>
+          -
+        </button>
+        <span className="basis-1/2">{contador}</span>
+        <button
+          className="basis-1/4 bg-green-300 rounded shadow-sm mx-2 p-2"
+          onClick={() => addProduct(+1)}
+          disabled={contador === parseInt(stock) ? true : null}
+        >
+          +
+        </button>
+      </div>
+
+      <button
+        className="bg-amber-300 rounded shadow my-4 p-2"
+        onClick={() => onAdd(contador)}
+        disabled={stock === 0 ? true : null}
+      >
+        Añadir
+      </button>
       </div>
     </div>
   );
-}
+};
 
 export default ItemCount;
