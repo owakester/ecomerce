@@ -1,29 +1,17 @@
-import React from 'react';
-import { useState } from 'react';
-import Logo from "../tablet.png";
+import React from "react";
+import { useState } from "react";
+import { AnnotationIcon } from '@heroicons/react/solid'
 
-const ItemCount = ({ initial, stock, onAdd,producto }) => {
- 
+const ItemCount = ({ initial, stock, onAdd, producto }) => {
   const [contador, setContador] = useState(initial);
 
   const addProduct = (num) => {
-    setContador(parseInt (contador) + num);
-    
+    setContador(parseInt(contador) + num);
   };
-
-  onAdd = (contador) => {
-    alert(`Has agregado ${contador} ${producto}`);
-  };
-
 
   return (
-    <div className="container ">
-      <div className='mt-12 bg-slate-100 h-auto w-48  mx-auto place-items-center shadow-xl'>
-        <p>{producto}</p>
-       <img className='mx-auto ' src={Logo}  alt=""height={180} width={180} />
+    <div className="pt-2 bg-slate-100 h-auto w-56  mx-auto place-items-center shadow-xl">
       <div className="flex flex-row lex items-center justify-center     ">
-      
-      
         <button
           className="basis-1/4 bg-green-300 rounded shadow-sm mx-2  py-2"
           onClick={() => addProduct(-1)}
@@ -48,7 +36,12 @@ const ItemCount = ({ initial, stock, onAdd,producto }) => {
       >
         Añadir
       </button>
-      </div>
+
+      <button>
+      <AnnotationIcon className="h-8 w-8 text-amber-300"/>
+      
+      
+      </button>
     </div>
   );
 };

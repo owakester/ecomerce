@@ -1,29 +1,24 @@
-import React from 'react';
-import ItemCount from './ItemCount';
+import React from "react";
+import ItemCount from "./ItemCount";
 
-
-const Item = ({ name, imageSrc, price, id, stock }) => {
+const Item = ({ name, pictureUrl, price, id, stock }) => {
   const onAdd = (contador) => {
-    alert(`Has agregado ${contador} productos`);
+    alert(`Sumaste a tu pedido ${contador}  ${name}🍔`);
   };
 
   return (
-    <article className="product-card">
-      <img className="product-card__image" src={imageSrc} alt="" />
-
-      <h3 className="product-card__name">{name}</h3>
-      <span className="product-card__name">${price}</span>
-
+    <article className="product-card mb-8 ">
+      <img className="rounded w-56 mx-auto " src={pictureUrl} alt="" />
       <ItemCount stock={stock} onAdd={onAdd} initial={1} />
+     
+      <div className="bg-gray-200 w-56 mx-auto rounded-b-lg">
+      <h3 className="bg-amber-300  text-xl italic" >{name}</h3>
+      <span className="text-amber-500 w-48 mx-auto">${price}</span>
+      <span className=" w-48 mx-auto"> Disponibles: <strong className="text-amber-500">{stock}</strong></span>
+      </div>
+      
     </article>
   );
-
-  
 };
 
 export default Item;
-
-
-
-
-

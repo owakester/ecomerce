@@ -1,13 +1,11 @@
+import React from "react";
+import ItemList from "./ItemList";
 
-function ItemListContainer(props) {
-  
-  
+function ItemListContainer() {
   return (
     <div>
-     
-                                
+      <ItemList />
     </div>
-      
   );
 }
 
