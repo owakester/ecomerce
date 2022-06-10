@@ -1,6 +1,7 @@
 import React from "react";
 import CartWidget from "../CartWidget";
 
+
 function Navbar() {
   return (
     <nav className="bg-gray-800">
@@ -48,6 +49,7 @@ function Navbar() {
               </svg>
             </button>
           </div>
+       
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center"></div>
             <div className="hidden sm:block sm:ml-6">
@@ -83,6 +85,7 @@ function Navbar() {
               </div>
             </div>
           </div>
+       
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
@@ -90,6 +93,8 @@ function Navbar() {
             >
               <span className="sr-only">View notifications</span>
               <div>
+
+
                 <CartWidget />
               </div>
             </button>

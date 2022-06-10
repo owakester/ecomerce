@@ -27,26 +27,28 @@ const ItemList = () => {
   }, []); //[] = solo una vez
 
   return (
-    <div className="product-list-container">
-      {products.length ? (
-        <>
-          {products.map((product) => {
-            return (
-              <div key={product.id}>
-                <Item
-                  name={product.name}
-                  pictureUrl={product.pictureUrl}
-                  price={product.price}
-                  stock={product.stock}
-                  id={product.id}
-                />
-              </div>
-            );
-          })}
-        </>
-      ) : (
-        <p>Cargando...</p>
-      )}
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-4   ">
+        {products.length ? (
+          <>
+            {products.map((product) => {
+              return (
+                <div className="" key={product.id}>
+                  <Item
+                    name={product.name}
+                    pictureUrl={product.pictureUrl}
+                    price={product.price}
+                    stock={product.stock}
+                    id={product.id}
+                  />
+                </div>
+              );
+            })}
+          </>
+        ) : (
+          <p>Cargando...</p>
+        )}
+      </div>
     </div>
   );
 };

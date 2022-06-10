@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { AnnotationIcon } from '@heroicons/react/solid'
+import { AnnotationIcon } from "@heroicons/react/solid";
 
 const ItemCount = ({ initial, stock, onAdd, producto }) => {
   const [contador, setContador] = useState(initial);
@@ -10,7 +10,7 @@ const ItemCount = ({ initial, stock, onAdd, producto }) => {
   };
 
   return (
-    <div className="pt-2 bg-slate-100 h-auto w-56  mx-auto place-items-center shadow-xl">
+    <div className="pt-2 bg-slate-100  w-56 h-36  mx-auto place-items-center shadow-xl">
       <div className="flex flex-row lex items-center justify-center     ">
         <button
           className="basis-1/4 bg-green-300 rounded shadow-sm mx-2  py-2"
@@ -38,9 +38,7 @@ const ItemCount = ({ initial, stock, onAdd, producto }) => {
       </button>
 
       <button>
-      <AnnotationIcon className="h-8 w-8 text-amber-300"/>
-      
-      
+        <AnnotationIcon className="h-8 w-8 text-amber-300" />
       </button>
     </div>
   );
