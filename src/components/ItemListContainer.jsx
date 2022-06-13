@@ -5,10 +5,9 @@ import BgImage from "./Navbar/BgImage";
 function ItemListContainer() {
   return (
     <div>
-         <BgImage/>
-         <br />
+      <BgImage />
+      <br />
       <ItemList />
-      
     </div>
   );
 }

@@ -2,9 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { AnnotationIcon } from "@heroicons/react/solid";
 
-const ItemCount = ({ initial, stock, onAdd, producto }) => {
+const ItemCount = ({ initial, stock, onAdd }) => {
   const [contador, setContador] = useState(initial);
-
   const addProduct = (num) => {
     setContador(parseInt(contador) + num);
   };

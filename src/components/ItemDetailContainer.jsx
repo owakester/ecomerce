@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import { getFetch } from "./getFetch";
 import ItemDetail from "./ItemDetail";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({ id }) => {
   const [product, setProduct] = useState({});
   useEffect(() => {
-    getFetch()
+    getFetch(Number(id), setProduct)
       .then((resp) => setProduct(resp))
       .catch((err) => console.log(err));
-  }, []);
-  return <ItemDetail product={product} />;
+  }, [id]);
+  return (
+    <section className="">
+      {product ? <ItemDetail item={product} /> : <p>Obteniendo producto...</p>}
+    </section>
+  );
 };
 
 export default ItemDetailContainer;
