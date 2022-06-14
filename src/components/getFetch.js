@@ -59,14 +59,15 @@ export let product = [
   },
 ];
 
-export const getFetch = ({ id }) => {
+export const getFetch = ( selectProd ) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
   
-      if (id) {
-        resolve(product[id].find((prod) => prod.id === id));
+      if (selectProd) {
+      /*   resolve(product[id].find((prod) => prod.id === selectProd)); */
+      resolve( product.find( film => film.id === selectProd))
       } else {
-        resolve(product[0]);
+        resolve(product[selectProd]);
       }
     }, 2000);
   });
