@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { AnnotationIcon } from "@heroicons/react/solid";
 
+
 const ItemCount = ({ initial, stock, onAdd }) => {
   const [contador, setContador] = useState(initial);
   const addProduct = (num) => {
@@ -35,10 +36,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       >
         Añadir
       </button>
-
-      <button>
-        <AnnotationIcon className="h-8 w-8 text-amber-300" />
-      </button>
+      
     </div>
   );
 };

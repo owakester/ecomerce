@@ -1,6 +1,6 @@
 import React from "react";
+import { NavLink, useParams } from "react-router-dom";
 import CartWidget from "../CartWidget";
-
 
 function Navbar() {
   return (
@@ -49,7 +49,7 @@ function Navbar() {
               </svg>
             </button>
           </div>
-       
+
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center"></div>
             <div className="hidden sm:block sm:ml-6">
@@ -59,7 +59,7 @@ function Navbar() {
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   aria-current="page"
                 >
-                  Inicio
+                  <a ><NavLink to="/">Inicio</NavLink></a>
                 </a>
 
                 <a
@@ -73,7 +73,7 @@ function Navbar() {
                   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Productos
+                 <a>  <NavLink to="/">Productos</NavLink></a>
                 </a>
 
                 <a
@@ -85,7 +85,7 @@ function Navbar() {
               </div>
             </div>
           </div>
-       
+
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
@@ -93,13 +93,17 @@ function Navbar() {
             >
               <span className="sr-only">View notifications</span>
               <div>
-
-
-                <CartWidget />
+                <NavLink to="car">
+                
+                  <CartWidget />
+                </NavLink>
               </div>
             </button>
 
-            <div className="ml-3 relative"></div>
+            <div className="ml-3 relative">
+              
+         
+            </div>
           </div>
         </div>
       </div>
@@ -141,3 +145,4 @@ function Navbar() {
 }
 
 export default Navbar;
+  

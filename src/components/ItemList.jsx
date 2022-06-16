@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import { product } from "./getFetch";
 import Item from "./Item";
 
-const ItemList = () => {
+const ItemList = ({ product }) => {
   const [products, setProducts] = useState([]);
 
   //esta constante guarda una instancia de la clase Promise, en la cual hay un setTimeout con 2 segundos que devuelve mi array de productos
@@ -22,11 +24,20 @@ const ItemList = () => {
     }
   };
 
+ 
+
+
   useEffect(() => {
+
+
+
+    
     getProductsFromDB();
-  }, []); //[] = solo una vez
+  }, [getProductsFromDB]); //[] = solo una vez
 
   return (
+
+   
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-4   ">
         {products.length ? (
