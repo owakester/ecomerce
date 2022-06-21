@@ -123,6 +123,21 @@ export let product = [
       "Sabores: Pinta, Rubia, Negra, Honey",
   },
 
+  {
+    id: 8,
+    name: "Batido de fruta",
+    href: "#",
+
+    price: "430",
+    stock: 12,
+    categoria: "bebidas",
+    pictureUrl:
+      "https://images.pexels.com/photos/2189206/pexels-photo-2189206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    Description:
+    "El batido cremoso de frutas nos permite disfrutar de uno de los postres, meriendas o desayunos más saludables que existe ",
+    ingredientes:
+      "Sabores: Licuado de frutilla,Licuado de  banana,Licuado de manzana, icuado de pera ",
+  },
 
   {
     id: 9,
@@ -172,6 +187,21 @@ export let product = [
       "con una salsa, tacos de pollo asado o a la parrilla, picatostes y láminas de queso parmesano, es una evolución de la autética ensalada César, que nació mucho antes de que este plato se hiciera muldialmente famoso.",
   },
 
+  {
+    id: 12,
+    name: "Ensalada Dulcura",
+    href: "#",
+
+    price: "630",
+    stock: 15,
+    categoria: "ensaladas",
+    pictureUrl:
+      "https://images.pexels.com/photos/6836097/pexels-photo-6836097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    Description:
+      "Que tal si ponemos un poco de dulce a nuestra ensalada? ",
+    ingredientes:
+      "Ensalada de manzana con uvas pasas y un toque de gran sabor, atado Radicheta,lechuga, dientes ajo, manzana rojal, cebolla chica, cucharadas aceite",
+  },
 
 
 

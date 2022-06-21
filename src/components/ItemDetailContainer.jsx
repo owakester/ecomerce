@@ -14,7 +14,7 @@ console.log(typeof (id))
     getFetch()
       .then((resp) =>setProduct(resp.find((prod) => prod.id === parseInt(id))))
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
   return (
     <section className="">
       {product ? <ItemDetail item={product} /> : <p>Obteniendo producto...</p>}

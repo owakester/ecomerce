@@ -10,7 +10,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   };
 
   return (
-    <div className="pt-2 bg-slate-100  w-56 h-36  mx-auto place-items-center shadow-xl">
+    <div className="pt-2 bg-slate-100  w-56 h-30  mx-auto place-items-center shadow-xl">
       <div className="flex flex-row lex items-center justify-center     ">
         <button
           className="basis-1/4 bg-green-300 rounded shadow-sm mx-2  py-2"
@@ -30,12 +30,13 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       </div>
 
       <button
-        className="bg-amber-300 rounded shadow my-4 p-2"
+        className="bg-amber-300 rounded shadow my-2 p-2"
         onClick={() => onAdd(contador)}
         disabled={stock === 0 ? true : null}
       >
         Añadir
       </button>
+      
       
     </div>
   );
