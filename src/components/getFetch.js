@@ -124,7 +124,7 @@ export let product = [
   },
 
   {
-    id: 8,
+    id: 9,
     name: "Batido de fruta",
     href: "#",
 
@@ -140,7 +140,7 @@ export let product = [
   },
 
   {
-    id: 9,
+    id: 10,
     name: "Ensalada de pollo",
     href: "#",
 
@@ -156,7 +156,7 @@ export let product = [
   },
 
   {
-    id: 10,
+    id: 11,
     name: "Ensalada Cesar",
     href: "#",
 
@@ -172,7 +172,7 @@ export let product = [
   },
 
   {
-    id: 11,
+    id: 12,
     name: "Ensalada suprema",
     href: "#",
 
@@ -188,7 +188,7 @@ export let product = [
   },
 
   {
-    id: 12,
+    id: 13,
     name: "Ensalada Dulcura",
     href: "#",
 

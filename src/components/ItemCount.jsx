@@ -1,43 +1,61 @@
-import React from "react";
-import { useState } from "react";
-import { AnnotationIcon } from "@heroicons/react/solid";
+import React from 'react';
+
+import { useState } from 'react';
 
 
 const ItemCount = ({ initial, stock, onAdd }) => {
+  //hook de estado
   const [contador, setContador] = useState(initial);
+  const [showButton, setshowButton] = useState(false);
+
+
   const addProduct = (num) => {
-    setContador(parseInt(contador) + num);
+    setContador(contador + num);
   };
 
+
+  const agregar = () => {
+    onAdd(contador)
+}
+
+
   return (
-    <div className="pt-2 bg-slate-100  w-56 h-30  mx-auto place-items-center shadow-xl">
-      <div className="flex flex-row lex items-center justify-center     ">
+    <div className="count-container">
+      <div className="count-container__contador">
         <button
-          className="basis-1/4 bg-green-300 rounded shadow-sm mx-2  py-2"
+          className="count-container__button"
           onClick={() => addProduct(-1)}
-          disabled={contador === parseInt(initial) ? true : null}
+          disabled={contador === initial ? true : null}
         >
           -
         </button>
-        <span className="basis-1/2">{contador}</span>
+        <span className="count-container__qty">{contador}</span>
         <button
-          className="basis-1/4 bg-green-300 rounded shadow-sm mx-2 p-2"
+          className="count-container__button"
           onClick={() => addProduct(+1)}
-          disabled={contador === parseInt(stock) ? true : null}
+          disabled={contador === stock ? true : null}
         >
           +
         </button>
       </div>
 
       <button
-        className="bg-amber-300 rounded shadow my-2 p-2"
-        onClick={() => onAdd(contador)}
+        className="button-primary"
+      onClick={agregar}
         disabled={stock === 0 ? true : null}
       >
         Añadir
       </button>
-      
-      
+    {/*   {showButton && history.location.pathname.includes('/detail') && (
+        <button
+          onClick={() => {
+            history.push('/cart');
+          }}
+          className="button-primary button-finalizar-compra"
+        >
+          Finalizar compra
+        </button>
+      )} */}
     </div>
   );
 };

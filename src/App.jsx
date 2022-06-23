@@ -9,14 +9,18 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import NoPage from "./components/NoPage";
 import BgImage from "./components/Navbar/BgImage";
 import BgFooter from "./components/BgFooter";
+import CartProvider from "./components/CartContext";
 
 function App() {
  
 
   return (
    <div className="bg-gradient-to-r from-slate-700 to-slate-800  App"> 
-      
+    
 
+
+    
+     <CartContextProvider>
       <Rutas>
         <Navbar/>
         <BgImage/>
@@ -33,7 +37,7 @@ function App() {
       <BgFooter/>
     </Rutas>
 
-
+    </CartContextProvider>
 
       
     
