@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Cart from "./Cart/Cart";
 import { useCartContext } from "./CartContext";
 import ItemCount from "./ItemCount";
 
@@ -17,7 +18,7 @@ const ItemDetail = ({ item }) => {
   console.log(cart);
 
   return (
-    <div className="mx-auto  bg-amber-400 m-4 max-w-screen-lg ">
+    <div className="mx-auto   bg-amber-400 m-4 max-w-screen-lg ">
       <div className="grid grid-cols-2">
         <div>
           <img className="rounded shadow-md m-4" src={item.pictureUrl} alt="" />
@@ -34,6 +35,15 @@ const ItemDetail = ({ item }) => {
             >
               Precio:${item.price}
             </h3>
+            <div class="static ...">
+  <p>Static parent</p>
+  <div class=" absolute top-0 right-0 ...">
+   <Cart/>
+  </div>
+</div>
+
+
+
             <p className="m-2 text-justify text-lg">
               Descripción:{item.description}
             </p>

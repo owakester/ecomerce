@@ -16,24 +16,24 @@ function Navbar() {
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                 
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   aria-current="page"
                 >
-                  <a ><NavLink to="/">Inicio</NavLink></a>
+                 <NavLink to="/">Inicio</NavLink>
                 </a>
 
               
 
                 <a
-                  href="#"
+                
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                 <a>  <NavLink to="/">Productos</NavLink></a>
+                  <NavLink to="/">Productos</NavLink>
                 </a>
 
                 <a
-                  href="#"
+               
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Contactenos

@@ -23,12 +23,14 @@ export const CartContextProvider = ({ children }) => {
     setCart([]);
   };
 
+  
   return (
     <CartContext.Provider
       value={{
         cart,
         addToCart,
         vaciarCarrito,
+        
       }}
     >
       {children}
