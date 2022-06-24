@@ -7,8 +7,7 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
 
 const {id}=useParams()
-console.log(parseInt(id))
-console.log(typeof (id))
+
 
   useEffect(() => {
     getFetch()

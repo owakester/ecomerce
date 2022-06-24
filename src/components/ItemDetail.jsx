@@ -1,19 +1,21 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "./CartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ item }) => {
-const [estado, setEstado] = useState(null)
+  const [estado, setEstado] = useState(null);
 
-
-
-
-
+  const { cart, addToCart } = useCartContext();
+  /// estado
   const onAdd = (contador) => {
-    alert(`Sumaste a tu pedido ${contador} 🍔`);
-setEstado(contador)
-
+    setEstado(contador);
+    addToCart({ ...item, cantidad: contador });
   };
+
+  console.log(cart);
+
   return (
     <div className="mx-auto  bg-amber-400 m-4 max-w-screen-lg ">
       <div className="grid grid-cols-2">
@@ -39,18 +41,15 @@ setEstado(contador)
               <strong className="text-2xl">Ingredientes: </strong>
               {item.ingredientes}
             </p>
-{
-  estado ?
-  <Link to='/car'>
-  <button className="bg-green-500 rounded-md p-2 ">Ir a carrito</button>
-  </Link>
-  :
-  <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-
-}
-
-
-
+            {estado ? (
+              <Link to="/car">
+                <button className="bg-green-500 rounded-md p-2 ">
+                  Ir a carrito
+                </button>
+              </Link>
+            ) : (
+              <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+            )}
           </div>
         </div>
       </div>

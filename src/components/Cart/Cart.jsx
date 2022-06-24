@@ -1,30 +1,29 @@
-import React from 'react'
-import App from '../../App'
+import React from "react";
+import App from "../../App";
+import { useCartContext } from "../CartContext";
 
 const Cart = () => {
+  const { cart, vaciarCarrito } = useCartContext();
   return (
-    <figure class="bg-slate-100 rounded-xl p-8 dark:bg-slate-800">
-    <div class="pt-6 space-y-4">
-      <blockquote>
-        <p class="text-lg">
-          “Tailwind CSS is the only framework that I've seen scale
-          on large teams. It’s easy to customize, adapts to any design,
-          and the build size is tiny.”
-        </p>
-      </blockquote>
-      <figcaption>
-        <div>
-          Sarah Dayan
-        </div>
-        <div>
-          Staff Engineer, Algolia
-        </div>
-      </figcaption>
-    </div>
-  </figure>
-  
-  
-  )
-}
+    <div className="bg-gray-500 rounded m-5 shadow-md">
+      <ul>
+        {cart.map((item) => (
+          <li className="border" key={item.id}>
+            <div className="w-25">
+              <img src={item.pictureUrl} className="h-24" />
+            </div>
+            nombre: {item.name} precio: {item.price} cantidad: {item.cantidad}
+          </li>
+        ))}
+      </ul>
 
-export default Cart
+      <div>
+        <button className="bg-green-500 rounded p-2" onClick={vaciarCarrito}>
+          Vaciar Carrito
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Cart;
