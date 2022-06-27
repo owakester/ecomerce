@@ -11,6 +11,8 @@ import BgImage from "./components/Navbar/BgImage";
 import BgFooter from "./components/BgFooter";
 import { CartContextProvider } from "./components/CartContext";
 import Cart from "./components/Cart/Cart";
+import Contact from "./components/Contact";
+
 
 function App() {
  
@@ -30,6 +32,7 @@ function App() {
         <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
           <Route path="/detalle/:id" element={<ItemDetailContainer />} />
           <Route path="/car" element={<Cart />} />
+          <Route path="/contacto" element={<Contact />} />
 {/*           <Route path="*" element={<NoPage />} />
  */}          <Route path='*' element={<Navigate to='/' />} />
       </Routes>

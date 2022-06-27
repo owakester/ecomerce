@@ -5,7 +5,7 @@ export let product = [
     href: "#",
 
     price: "650",
-    stock: 5,
+    stock:5,
     categoria: "hamburguesas",
     pictureUrl:
       "https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_960_720.jpg",

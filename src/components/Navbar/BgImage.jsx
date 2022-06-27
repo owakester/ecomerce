@@ -7,7 +7,6 @@ import Cart from "../Cart/Cart";
 function BgImage(categoriaId) {
   const [mostrar, setMostrar] = useState(true);
 
-  console.log(mostrar);
 
   return (
     <header>

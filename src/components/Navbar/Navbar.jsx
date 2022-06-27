@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 import CartWidget from "../CartWidget";
+import Contact from "../Contact";
+
 
 function Navbar() {
   return (
@@ -36,7 +38,10 @@ function Navbar() {
                
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Contactenos
+                  
+                  <NavLink to="/contacto"> Contactenos</NavLink>
+
+                  
                 </a>
               </div>
             </div>

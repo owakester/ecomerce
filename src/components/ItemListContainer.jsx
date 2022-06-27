@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Cargando from "./Cargando";
 import { getFetch } from "./getFetch";
 import ItemList from "./ItemList";
 
@@ -35,7 +36,7 @@ const ItemListContainer = () => {
     return (
         <div>
             { loading ? 
-                <h1>Cargando...</h1>            
+                <Cargando/>     
             :   
                 <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
                       <ItemList product={product} />                   

@@ -13,9 +13,11 @@ const ItemDetail = ({ item }) => {
   const onAdd = (contador) => {
     setEstado(contador);
     addToCart({ ...item, cantidad: contador });
+    
   };
+ 
 
-  console.log(cart);
+ 
 
   return (
     <div className="mx-auto   bg-amber-400 m-4 max-w-screen-lg ">
@@ -35,7 +37,7 @@ const ItemDetail = ({ item }) => {
             >
               Precio:${item.price}
             </h3>
-            <div class="static ...">
+            <div className="static ...">
   <p>Static parent</p>
   <div class=" absolute top-0 right-0 ...">
    <Cart/>
@@ -60,6 +62,11 @@ const ItemDetail = ({ item }) => {
             ) : (
               <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
             )}
+            <p>Stock:{item.stock}</p>
+
+             
+
+
           </div>
         </div>
       </div>
