@@ -19,7 +19,7 @@ const Cart = () => {
         
         
 
-<div className="pt-20 pointer-events-auto w-screen max-w-md  scroll-smooth hover:scroll-auto ">
+<div className="pt-20 pointer-events-auto w-screen max-w-md   overflow-y-auto h-96  scroll-smooth hover:scroll-auto ">
 <ul>
         {cart.map((item) => (
           <div className="flex h-full flex-col  bg-white shadow-xl snap-x snap-mandatory ...">

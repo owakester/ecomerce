@@ -30,7 +30,7 @@ function CartWidget() {
          {/*   <h1 className='text-center'>Carrito de Compras</h1> */}
          <img className=" " src={Logo} height={30} width={30} />
    
-<button className="rounded-full bg-gray-100 p-1 text-xs font-bold text-amber-400 ">{cart.length}</button>
+<button className="rounded-full bg-gray-100 p-1 text-xs font-bold text-amber-400 ">{iconCart()}</button>
 <button className="bg-amber-400 rounded p-1 text-white m-2" onClick={vaciarCarrito}>
           Vaciar
         </button>

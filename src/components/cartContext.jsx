@@ -23,28 +23,17 @@ export const CartContextProvider = ({ children }) => {
     setCart([]);
   };
 
-
   const removeItem = (id) => {
-
     const newCart = [...cart];
-    let index = newCart.findIndex(el => el.id === id);
-    
-    newCart.splice( index, 1 );
+    let index = newCart.findIndex((el) => el.id === id);
+
+    newCart.splice(index, 1);
 
     setCart([...newCart]);
+  };
 
+  const iconCart = () => cart.reduce((acum, valor) => acum + valor.cantidad, 0);
 
-
- };
-
-
- const iconCart = () => cart.reduce((acum, valor) => acum + valor.cantidad, 0);
-
-
-
-
-
-  
   return (
     <CartContext.Provider
       value={{
@@ -53,8 +42,7 @@ export const CartContextProvider = ({ children }) => {
         addToCart,
         vaciarCarrito,
         removeItem,
-        iconCart
-
+        iconCart,
       }}
     >
       {children}
