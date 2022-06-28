@@ -9,7 +9,7 @@ export let product = [
     categoria: "hamburguesas",
     pictureUrl:
       "https://cdn.pixabay.com/photo/2020/10/05/19/55/hamburger-5630646_960_720.jpg",
-    description:
+    Description:
       "Si vas a comer una hamburguesa, que sea con mucha mayonesa. Acá te mostramos la combinación que nunca falla: cheddar y panceta. No te quedes afuera ",
     ingredientes:
       "COMPLETA / HAMBURGUESA CASERA CON PANCETA, QUESO CHEDDAR, CEBOLLA CARAMELIZADA, LECHUGA, TOMATE Y PEPINOS.",

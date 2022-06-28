@@ -32,7 +32,7 @@ export const CartContextProvider = ({ children }) => {
     setCart([...newCart]);
   };
 
-  const iconCart = () => cart.reduce((acum, valor) => acum + valor.cantidad, 0);
+  const iconCart = () => cart.reduce((acum, valor) => acum + valor.cantidad, 0); // suma todos los elementos del array
 
   return (
     <CartContext.Provider
