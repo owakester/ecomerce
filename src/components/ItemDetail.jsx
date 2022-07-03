@@ -38,8 +38,8 @@ const ItemDetail = ({ item }) => {
               Precio:${item.price}
             </h3>
             <div className="static ...">
-  <p>Static parent</p>
-  <div class=" absolute top-0 right-0 ...">
+  
+  <div className=" absolute top-0 right-0 ...">
    <Cart/>
   </div>
 </div>
@@ -54,16 +54,35 @@ const ItemDetail = ({ item }) => {
               {item.ingredientes}
             </p>
             {estado ? (
+
+              
               <Link to="/car">
                 <button className="bg-green-500 rounded-md p-2 ">
                   Ir a carrito
                 </button>
+
+                
+                <Link  to="/"><button className="bg-green-500 rounded-md p-2 mx-2">
+                  Comprar +
+                </button></Link>
+                
               </Link>
-            ) : (
+            
+              
+              ) 
+              
+              
+              
+              
+              : (
               <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
             )}
-            <p>Stock:{item.stock}</p>
 
+
+
+
+
+            
              
 
 

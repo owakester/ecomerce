@@ -13,6 +13,7 @@ import {
   where,
   limit,
 } from "firebase/Firestore";
+import BgImage from "./Navbar/BgImage";
 
 const ItemListContainer = () => {
   const [product, setProductos] = useState([]);
@@ -85,6 +86,7 @@ const ItemListContainer = () => {
         <div
           style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
         >
+        {/*   <BgImage/> */}
           <ItemList product={product} />
         </div>
       )}

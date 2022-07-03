@@ -18,11 +18,12 @@ function CartWidget() {
       ) : (
         <div className="mt-4">
           {/*   <h1 className='text-center'>Carrito de Compras</h1> */}
-          <img className=" " src={Logo} height={30} width={30} />
+          <img className=" absolute ... text-red-500 " src={Logo} fill="none"  height={30} width={30} />
 
-          <button className="rounded-full bg-gray-100 p-1 text-xs font-bold text-amber-400 ">
+          <button className=" right-12 absolute ... rounded-full bg-green-300 px-1 text-xs font-bold text-white ">
             {iconCart()}
           </button>
+          <br />
           <button
             className="bg-amber-400 rounded p-1 text-white m-2"
             onClick={vaciarCarrito}

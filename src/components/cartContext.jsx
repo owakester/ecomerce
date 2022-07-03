@@ -31,6 +31,19 @@ export const CartContextProvider = ({ children }) => {
 
     setCart([...newCart]);
   };
+  
+
+
+
+const totalPrecio =()=> cart.reduce((acum,valor)=>acum+valor.price*valor.cantidad,0)
+
+
+
+
+
+
+
+
 
   const iconCart = () => cart.reduce((acum, valor) => acum + valor.cantidad, 0); // suma todos los elementos del array
 
@@ -43,6 +56,8 @@ export const CartContextProvider = ({ children }) => {
         vaciarCarrito,
         removeItem,
         iconCart,
+        totalPrecio,
+      
       }}
     >
       {children}
