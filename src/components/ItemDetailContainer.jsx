@@ -11,7 +11,7 @@ import {
   getFirestore,
   query,
   where,
-} from "firebase/Firestore";
+} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});

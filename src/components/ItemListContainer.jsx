@@ -12,7 +12,7 @@ import {
   query,
   where,
   limit,
-} from "firebase/Firestore";
+} from "firebase/firestore";
 import BgImage from "./Navbar/BgImage";
 
 const ItemListContainer = () => {
