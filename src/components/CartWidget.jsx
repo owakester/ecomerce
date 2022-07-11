@@ -20,7 +20,7 @@ function CartWidget() {
           {/*   <h1 className='text-center'>Carrito de Compras</h1> */}
           <img
             className=" absolute ... text-red-500 "
-            src={Logo}
+            src="https://cdn-icons-png.flaticon.com/512/34/34568.png"
             fill="none"
             height={30}
             width={30}
