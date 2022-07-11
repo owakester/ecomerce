@@ -14,7 +14,7 @@ import {
   updateDoc,
   documentId,
   writeBatch,
-} from "firebase/Firestore";
+} from "firebase/firestore";
 
 import { useState } from "react";
 import Cargando from "../Cargando";
