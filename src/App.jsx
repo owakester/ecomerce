@@ -14,9 +14,11 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import NoPage from "./components/NoPage";
 import BgImage from "./components/Navbar/BgImage";
 import BgFooter from "./components/BgFooter";
-import { CartContextProvider } from "./components/CartContext";
+
+
 import Cart from "./components/Cart/Cart";
 import Contact from "./components/Contact";
+import { CartContextProvider } from "./components/CartContext";
 
 function App() {
   return (
