@@ -1,7 +1,7 @@
 {
   "name": "ecomerce",
   "private": true,
-  "homepage": "http://owakester.github.io/ecomerce",
+
   "version": "0.0.0",
   "scripts": {
     "predeploy": "npm run build",
