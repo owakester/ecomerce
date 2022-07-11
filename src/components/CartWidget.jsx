@@ -18,7 +18,13 @@ function CartWidget() {
       ) : (
         <div className="mt-4">
           {/*   <h1 className='text-center'>Carrito de Compras</h1> */}
-          <img className=" absolute ... text-red-500 " src={Logo} fill="none"  height={30} width={30} />
+          <img
+            className=" absolute ... text-red-500 "
+            src={Logo}
+            fill="none"
+            height={30}
+            width={30}
+          />
 
           <button className=" right-12 absolute ... rounded-full bg-green-300 px-1 text-xs font-bold text-white ">
             {iconCart()}

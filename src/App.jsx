@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Rutas, Routes, Route,Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Rutas,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import CartWidget from "./components/CartWidget";
@@ -13,40 +18,32 @@ import { CartContextProvider } from "./components/CartContext";
 import Cart from "./components/Cart/Cart";
 import Contact from "./components/Contact";
 
-
 function App() {
- 
-
   return (
-
     <CartContextProvider>
-   <div className="bg-gradient-to-r from-slate-700 to-slate-800  App"> 
-      
+      <div className="bg-gradient-to-r from-slate-700 to-slate-800  App">
+        <Rutas>
+          <Navbar />
+          <BgImage />
+          <br />
+          <Routes>
+            <Route index path="/" element={<ItemListContainer />} />
+            <Route
+              path="/categoria/:categoriaId"
+              element={<ItemListContainer />}
+            />
+            <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+            <Route path="/car" element={<Cart />} />
+            <Route path="/contacto" element={<Contact />} />
+            {/*           <Route path="*" element={<NoPage />} />
+             */}{" "}
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
 
-      <Rutas>
-        <Navbar/>
-        <BgImage/>
-        <br />
-      <Routes>
-        <Route index path="/" element={<ItemListContainer />} />
-        <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
-          <Route path="/detalle/:id" element={<ItemDetailContainer />} />
-          <Route path="/car" element={<Cart />} />
-          <Route path="/contacto" element={<Contact />} />
-{/*           <Route path="*" element={<NoPage />} />
- */}          <Route path='*' element={<Navigate to='/' />} />
-      </Routes>
-
-      <BgFooter/>
-    </Rutas>
-
-
-
-      
-    
-
-  </div> 
-  </CartContextProvider>
+          <BgFooter />
+        </Rutas>
+      </div>
+    </CartContextProvider>
   );
 }
 

@@ -23,7 +23,6 @@ const ItemListContainer = () => {
 
   const { categoriaId } = useParams();
 
-
   useEffect(() => {
     const db = getFirestore();
     const queryCollection = collection(db, "productos");
@@ -55,29 +54,6 @@ const ItemListContainer = () => {
 
   console.log(product);
 
-  /*    console.log(categoriaId) */
-
-  /*     useEffect(()=>{
-        if (categoriaId) {
-            getFetch()// llamada a la api
-            .then((resp)=> {
-                    setProductos(resp.filter(producto => producto.categoria === categoriaId ))
-                    setLoading(false)
-            })
-            .catch(err => console.log(err))           
-       
-       
-       
-        } else {
-            getFetch()// llamada a la api
-            .then( (resp)=> setProductos(resp) )
-            .catch(err => console.log(err)) 
-            .finally(()=> setLoading(false))           
-        } 
-        
-    
-    }, [categoriaId]) */
-
   return (
     <div>
       {loading ? (
@@ -86,7 +62,7 @@ const ItemListContainer = () => {
         <div
           style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
         >
-        {/*   <BgImage/> */}
+          {/*   <BgImage/> */}
           <ItemList product={product} />
         </div>
       )}

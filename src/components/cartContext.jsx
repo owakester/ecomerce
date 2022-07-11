@@ -23,6 +23,11 @@ export const CartContextProvider = ({ children }) => {
     setCart([]);
   };
 
+
+
+  const mensajeFinal =()=> cart.reduce((acum,valor)=>acum+valor.price*valor.cantidad,0)
+
+
   const removeItem = (id) => {
     const newCart = [...cart];
     let index = newCart.findIndex((el) => el.id === id);
@@ -57,7 +62,7 @@ const totalPrecio =()=> cart.reduce((acum,valor)=>acum+valor.price*valor.cantida
         removeItem,
         iconCart,
         totalPrecio,
-      
+        mensajeFinal,
       }}
     >
       {children}
