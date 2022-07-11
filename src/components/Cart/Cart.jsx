@@ -1,5 +1,3 @@
-/* import { getFirestore, collection, addDoc } from "firebase/firestore"; */
-
 import React from "react";
 
 import { CartContext, useCartContext } from "../CartContext";
@@ -17,24 +15,28 @@ import {
   documentId,
   writeBatch,
 } from "firebase/Firestore";
+
 import { useState } from "react";
 import Cargando from "../Cargando";
 import DatosCompra from "../datosCompra";
+import { useEffect } from "react";
 
 const Cart = () => {
-  const { cart, vaciarCarrito, removeItem, totalPrecio } =
-    useCartContext();
+  const { cart, vaciarCarrito, removeItem, totalPrecio } = useCartContext();
   const [guardar, setGuardar] = useState([]);
   const [show, setShow] = useState(true);
+  const [nombre, setNombre] = useState("");
+  const [total, setTotal] = useState();
 
   async function generarOrden(e) {
     let orden = {};
 
     orden = {
-      name: "Carlos Bohorquez",
+      name: "carlos Bohorquez",
       phone: "1112545345",
       email: "alejo15084@gmail.com",
     };
+    console.log(orden.name);
 
     e.preventDefault();
     /*  orden = {}; */
@@ -54,6 +56,9 @@ const Cart = () => {
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
     addDoc(orderCollection, orden).then((resp) => setGuardar(resp.id)); //id orden insertada
+
+    setNombre({ nombre: orden.name, email: orden.email });
+    setTotal(orden.total);
 
     const querycollectionStock = collection(db, "productos");
 
@@ -88,9 +93,12 @@ const Cart = () => {
       <br />
       <br />
       <br />
+
       <ul>
         {cart.map((item) => (
-          <div className=" flex h-full flex-col  bg-white shadow-xl snap-x snap-mandatory ...">
+          <div className=" flex h-full flex-col mx-2 rounded  bg-white shadow-xl snap-x snap-mandatory ...">
+            <br />
+            <hr />
             <div className=" flex-1 overflow-y-auto py-6 px-4 sm:px-6">
               <div className="flex items-start justify-between">
                 <h2
@@ -144,12 +152,14 @@ const Cart = () => {
                             <h3>
                               <a href="#"> {item.name} </a>
                             </h3>
-                            <p className="ml-4">{item.price}</p>
+                            <p className="ml-4 text-green-700">
+                              $ {item.price}
+                            </p>
                           </div>
                         </div>
                         <div className="flex flex-1 items-end justify-between text-sm">
                           <p className="text-gray-500">
-                            Cantidad: {item.cantidad}
+                            Cant No: {item.cantidad}
                           </p>
                           <p className="text-gray-500 mx-1 ">
                             Stock: {item.stock}
@@ -165,6 +175,8 @@ const Cart = () => {
                           >
                             Stock
                           </h2>
+
+                          <p className="">$ {item.price * item.cantidad}</p>
 
                           <div className="flex">
                             <button
@@ -182,73 +194,95 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-
-            <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
-              <div className="flex justify-between text-base font-medium text-gray-900">
-                <p>Subtotal</p>
-                {/*  Total: ${item.cantidad * item.price} */}
-                <p>Total: ${totalPrecio()}</p>
-              </div>
-              <p className="mt-0.5 text-sm text-gray-500">
-                Impuestos y envios calculados en el checkout
-              </p>
-
-              <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                {/*    <p>
-                  or <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
-                </p> */}
-              </div>
-            </div>
           </div>
         ))}
-
-        <div></div>
       </ul>
 
-{/*       <h2>Datos del Comprador</h2> */}
-
-     
-
       <div>
-        <button
-          className="text-base font-medium text-md text-white rounded p-2 bg-green-500"
-          onClick={generarOrden}
-        >
-          Terminar compra
-        </button>
         <br />
-        <p className="bg-gray-200 rounded p-4 m-2">   Su codigo de compra es: {guardar}</p>
-     
-        {/*    <>
-      <button
 
+        <>
+          <button
+            className="bg-green-300 rounded p-2 m-2 "
+            disabled={cart.length === 0}
+            type="button"
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            🧾 Recibo de compra{" "}
+            {show ? (
+              <button
+                className="text-base font-medium text-md text-white rounded p-2 bg-green-500"
+                onClick={generarOrden}
+                disabled={cart.length === 0}
+              >
+                Terminar compra
+              </button>
+            ) : (
+              "-"
+            )}
+          </button>
 
+          {show ? (
+            <div>
+              <p className="text-gray-100">Gracias por su compra</p>
+            </div>
+          ) : (
+            <div
+              className="bg-gray-300 mb-8 justify-center rounded shadow-sm mx-8 justify-items-center  	"
+              style={{ color: "blue" }}
+            >
+              <form className=" p-4" action="">
+                <div className="mb-6">
+                  <label
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    htmlFor="nombre"
+                  >
+                    Nombre
+                  </label>
 
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    value={nombre.nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="name@flowbite.com"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    htmlFor="nombre"
+                  >
+                    Correo
+                  </label>
 
-        type="button"
-        onClick={() => {
-          setShow(!show)
-        
-        }}
-      >
-        Mostrar {show ? 'Div 2' : 'Div 1'}
-      </button>
+                  <input
+                    type="email"
+                    id="correo"
+                    name="email"
+                    value={nombre.email}
+                    onChange={(e) => setNombre(e.target.value)}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="name@flowbite.com"
+                    required
+                  />
+                </div>
 
-      {show ? (
-        <div >
+                <p className="bg-gray-200 rounded p-4 m-2">
+                  {" "}
+                  Su codigo de compra es: {guardar}
+                </p>
+              </form>
 
-
-
-
-
-        </div>
-
-
-
-      ) : (
-        <div style={{ color: 'blue' }}>Div 2</div>
-      )}
-    </> */}
+              <p>Total a pagar: ${total}</p>
+            </div>
+          )}
+        </>
       </div>
     </div>
   );
